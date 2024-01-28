@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 padding: 0 15px;
+padding-bottom: 10px;
+height: 100%;
 
 `
 
@@ -10,6 +12,7 @@ width: 100%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-top: 150px;
 `
 
 export const Title = styled.h1`
