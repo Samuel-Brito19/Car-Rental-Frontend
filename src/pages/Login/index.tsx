@@ -4,8 +4,8 @@ const Register = () => {
     return(
         <Container>
             <Header>
-                <Title>Olá mundo</Title>
-                <SubTitle>ai aai aiania iasidi iaid iasidia idsidiai iasdi ia idasidisiadiias</SubTitle>
+                <Title>Crie sua conta</Title>
+                <SubTitle>Estamos quase lá</SubTitle>
             </Header>
         </Container>
     )
