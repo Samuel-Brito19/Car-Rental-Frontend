@@ -16,5 +16,5 @@ padding: 50px;
 width: 270px;
 gap: 20px;
 margin-top: 30px;
-
+//background-color: #1B1F27;
 `

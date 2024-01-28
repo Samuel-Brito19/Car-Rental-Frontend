@@ -1,3 +1,4 @@
+import { Button } from "../../components/Button/styles"
 import { ContainerForm } from "../../components/Form/style"
 import { InputStyled, Span } from "../../components/Input/style"
 import { Container, Header, SubTitle, Title } from "./styles"
@@ -16,7 +17,9 @@ const Register = () => {
             <InputStyled placeholder="Insira seu email"/>
             <InputStyled placeholder="Insira sua senha"/>
             <InputStyled placeholder="Confirme sua senha"/>
+            <Button>Cadastrar</Button>
             <Span>Já tem uma conta? Clique aqui</Span>
+            
         </ContainerForm>
         </>
     )

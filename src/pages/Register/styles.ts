@@ -4,15 +4,15 @@ export const Container = styled.div`
 padding: 0 15px;
 padding-bottom: 10px;
 height: 100%;
-
 `
 
 export const Header = styled.div`
 width: 100%;
-  flex-direction: row;
-  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-top: 150px;
+  margin-top: 130px;
 `
 
 export const Title = styled.h1`
