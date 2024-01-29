@@ -12,6 +12,7 @@ const Register = () => {
                 <SubTitle>Estamos quase lá</SubTitle>
             </Header>
         </Container>
+        
         <ContainerForm>
             <InputStyled placeholder="Insira seu nome"/>
             <InputStyled placeholder="Insira seu email"/>
