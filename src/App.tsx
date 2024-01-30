@@ -1,11 +1,10 @@
-import CarImages from "./components/Car"
+import ComponentCar from './components/Car'
+import { CarsArray } from './components/Car/array'
 import './styles/global.css'
-
 
 function App() {
   return (
-        <CarImages/>
-    
+    <ComponentCar CarsImages={CarsArray} />
   )
 }
 
