@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mui/icons-material": "^5.15.7",
+    "@mui/material": "^5.15.7",
+    "@mui/types": "^7.2.13",
     "@types/axios": "^0.14.0",
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.34",
