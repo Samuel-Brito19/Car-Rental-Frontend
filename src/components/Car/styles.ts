@@ -1,28 +1,31 @@
 import styled from "styled-components";
 
-
-export const WrapContainer = styled.div`
+export const GeneralContainer = styled.div`
 display: flex;
 align-items: center;
 justify-content: center;
+width: 100%;
 padding: 10px;
 `
+
 export const WrapCars = styled.button`
 display: flex;
-//flex-direction: row;
-gap: 20px;
-width: 80%;
-background-color: #F5F5F5;
-border: 1px solid black;
-border-radius: 10px;
 align-items: center;
 justify-content: center;
+width: 80%;
+gap: 30px;
+padding: 10px;
+border-radius: 20px;
 `
 
 export const ContainerCars = styled.label`
-
 width: 100px;
 height: 100px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+
 `
 
 export const ImgCar = styled.img`
@@ -32,7 +35,6 @@ height: 75px;
 `
 
 export const NormalLabel = styled.label`
-display: flex;
 flex-direction: column;
 padding: 10px;
 `

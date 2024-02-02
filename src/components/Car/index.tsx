@@ -1,5 +1,5 @@
 import { Header, Title } from "../../pages/Register/styles"
-import { ContainerCars, ImgCar, NormalLabel, WrapCars, WrapContainer } from "./styles"
+import { ContainerCars, GeneralContainer, ImgCar, NormalLabel, WrapCars } from "./styles"
 
 interface ImageCar {
     image: string,
@@ -19,15 +19,16 @@ const ComponentCar = ({CarsImages}: Props) => {
             <Title>Carros disponíveis</Title>
         </Header>
         {CarsImages.map((cars) => (
-        <WrapContainer>
-        <WrapCars key={cars.label}>
-          <ContainerCars>
-          <NormalLabel>{cars.label}</NormalLabel>
-          <NormalLabel style={{color: "green"}}>{cars.price}</NormalLabel>
-          </ContainerCars>
-          <ImgCar src={cars.image}/>
-        </WrapCars>
-        </WrapContainer>
+            <GeneralContainer key={cars.label}>
+            <WrapCars >
+                <ContainerCars>
+                    <NormalLabel>{cars.label}</NormalLabel>
+                    <NormalLabel style={{color: "green"}}>{cars.price}</NormalLabel>
+                </ContainerCars>
+                    <ImgCar src={cars.image}/>
+            </WrapCars>
+            </GeneralContainer>
+
       ))}
         </>
     )
