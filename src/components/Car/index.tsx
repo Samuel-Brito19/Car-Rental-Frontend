@@ -12,7 +12,7 @@ interface Props {
     CarsImages: ImageCar[]
 }
 
-const ComponentCar = ({CarsImages}: Props) => {
+const ComponentCar: React.FC<Props> = ({CarsImages}) => {
     return (
         <>
         <Header>
