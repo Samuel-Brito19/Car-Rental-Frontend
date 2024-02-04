@@ -1,4 +1,4 @@
-import { Header, Title } from "../../pages/Register/styles"
+import { Header, Title } from "../Register/styles"
 import { ContainerCars, GeneralContainer, ImgCar, NormalLabel, WrapCars } from "./styles"
 
 interface ImageCar {
