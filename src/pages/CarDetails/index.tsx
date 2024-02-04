@@ -1,6 +1,10 @@
+import { Container, ImageContainer } from "./styles"
+
 const CarDetails = () => {
     return (
-        <div>Caracete</div>
+        <Container>
+            <ImageContainer/>
+        </Container>
     )
 }
 
