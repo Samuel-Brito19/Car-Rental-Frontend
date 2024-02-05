@@ -1,13 +1,23 @@
-import { CarDescription, CarName, Container, DetailsContainer, ImageContainer } from "./styles"
+import { CarDescription, CarName, Container, DescriptionWrap, DetailsContainer, ImageContainer, RentButton } from "./styles"
 
 const CarDetails = () => {
     return (
         <Container>
             <ImageContainer/>
             <DetailsContainer>
-                <CarName>Fox</CarName> 
-                <CarDescription>como colocar um read more?</CarDescription>
+                <CarName>Fox</CarName>
+                <DescriptionWrap>
+                <CarDescription>Details</CarDescription>
+                <CarDescription>Details</CarDescription>
+                <CarDescription>Details</CarDescription>
+                <CarDescription>Details</CarDescription>
+                <CarDescription>Details</CarDescription>
+                <CarDescription>Details</CarDescription>
+                <CarDescription>Details</CarDescription>
+                </DescriptionWrap>
+                
             </DetailsContainer>
+            <RentButton>Rent Now!!</RentButton>
         </Container>
     )
 }
