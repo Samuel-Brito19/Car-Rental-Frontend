@@ -38,14 +38,23 @@ export const NormalLabel = styled.label`
 flex-direction: column;
 padding: 10px;
 `
-export const WrapInputs = styled.div`
+export const WrapInput = styled.div`
 display: flex;
 flex-direction: column;
+align-items: center;
+justify-content: center;
+
+& input {
+    width: 370px;
+}
 `
 
-export const BiggerInput = styled.input`
-width: 100%;
+export const WrapInputRow = styled.div`
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
 `
-export const SmallerInput = styled.input`
-width: 50%;
+export const OrinalInput = styled.input`
+height: 30px;
 `
