@@ -5,7 +5,7 @@ import './styles/global.css'
 
 function App() {
   return (
-    <CarDetails/>
+    <ComponentCar CarsImages={CarsArray}/>
   )
 }
 

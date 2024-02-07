@@ -1,13 +1,9 @@
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Login from "../../pages/Login";
+import { Container } from "./styles"
 
-
-const Tab  = createBottomTabNavigator();
-
-export default function Routes() {
-    return (
-        <Tab.Navigator>
-            <Tab.Screen name="home" component={Login} />
-        </Tab.Navigator>
+export const TabMenu = () => {
+    return(
+        <Container>
+            
+        </Container>
     )
 }

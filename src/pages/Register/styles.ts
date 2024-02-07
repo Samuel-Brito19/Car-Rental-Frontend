@@ -4,6 +4,7 @@ export const Container = styled.div`
 padding: 0 15px;
 padding-bottom: 10px;
 height: 100%;
+
 `
 
 export const Header = styled.div`
@@ -17,7 +18,7 @@ export const Header = styled.div`
 
 export const Title = styled.h1`
   font-size: 40px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 `;
 
 

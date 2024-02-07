@@ -1,5 +1,5 @@
 import { Header, Title } from "../Register/styles"
-import { ContainerCars, GeneralContainer, ImgCar, NormalLabel, WrapCars } from "./styles"
+import { ContainerCars, GeneralContainer, ImgCar, NormalLabel, WrapCars, WrapInputs } from "./styles"
 
 interface ImageCar {
     image: string,
@@ -18,6 +18,7 @@ const ComponentCar: React.FC<Props> = ({CarsImages}) => {
         <Header>
             <Title>Carros disponíveis</Title>
         </Header>
+        <WrapInputs/>
         {CarsImages.map((cars) => (
             <GeneralContainer key={cars.label}>
             <WrapCars >

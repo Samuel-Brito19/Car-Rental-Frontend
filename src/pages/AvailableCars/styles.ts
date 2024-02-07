@@ -38,3 +38,14 @@ export const NormalLabel = styled.label`
 flex-direction: column;
 padding: 10px;
 `
+export const WrapInputs = styled.div`
+display: flex;
+flex-direction: column;
+`
+
+export const BiggerInput = styled.input`
+width: 100%;
+`
+export const SmallerInput = styled.input`
+width: 50%;
+`
