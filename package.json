@@ -16,6 +16,8 @@
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.34",
     "axios": "^1.6.5",
+    "iconsax-react": "^0.0.8",
+    "primereact": "^10.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.3",

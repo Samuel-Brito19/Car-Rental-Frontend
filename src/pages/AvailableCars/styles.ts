@@ -4,7 +4,7 @@ export const GeneralContainer = styled.div`
 display: flex;
 align-items: center;
 justify-content: center;
-width: 100%;
+//width: 100%;
 padding: 10px;
 `
 
@@ -12,7 +12,7 @@ export const WrapCars = styled.button`
 display: flex;
 align-items: center;
 justify-content: center;
-width: 80%;
+//width: 80%;
 gap: 30px;
 padding: 10px;
 border-radius: 20px;
@@ -55,6 +55,6 @@ flex-direction: row;
 align-items: center;
 justify-content: center;
 `
-export const OrinalInput = styled.input`
+export const OriginalInput = styled.input`
 height: 30px;
 `
