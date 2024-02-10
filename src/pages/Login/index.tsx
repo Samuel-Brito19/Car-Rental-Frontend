@@ -5,15 +5,38 @@ import { InputStyled } from "../../components/Input/style"
 import { Container, Header, Title } from "../Register/styles"
 import { useState } from "react"
 import { Span } from "./styles"
+import * as storage from '../../services/storage'
+import api from "../../services/api"
+import { AxiosError } from "axios"
 
 const Login = () => {
-    //const navigate = useNavigate()
+    const navigate = useNavigate()
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
+
+        try {
+            const response = await api.post('/login', {
+                email,
+                password
+            })
+
+            const {token, user} = response.data
+            storage.saveForLogin(token, user)
+
+            navigate('/home')
+            
+        } catch (error) {
+            if (error instanceof AxiosError) {
+                alert(error.response?.data.error)
+                return
+              }
+        
+              alert('Something went wrong, please try again.')
+        }
     }
     
     return (
@@ -23,10 +46,10 @@ const Login = () => {
                 <Title>Login</Title>
             </Header>
         </Container>
-        <ContainerForm>
-            <InputStyled placeholder="Insira seu email"/>
-            <InputStyled placeholder="Insira sua senha"/>
-            <Button>Entrar</Button>
+        <ContainerForm onSubmit={handleSubmit}>
+            <InputStyled placeholder="Insira seu email" type="email" value={email} onChange={(event) => {setEmail(event.target.value)}}/>
+            <InputStyled placeholder="Insira sua senha" type="password" value={password} onChange={(event) => { setPassword(event.target.value) }}/>
+            <Button type="submit">Entrar</Button>
             <Span>
           Don't have an account yet? <Link to="/register">Register</Link>
             </Span>
