@@ -1,10 +1,9 @@
 import { Link, useNavigate } from "react-router-dom"
 import { Button } from "../../components/Button/styles"
 import { ContainerForm } from "../../components/Form/style"
-import { InputStyled } from "../../components/Input/style"
+import { InputStyled, Span } from "../../components/Input/style"
 import { Container, Header, Title } from "../Register/styles"
 import { useState } from "react"
-import { Span } from "./styles"
 import * as storage from '../../services/storage'
 import api from "../../services/api"
 import { AxiosError } from "axios"
@@ -19,7 +18,7 @@ const Login = () => {
         event.preventDefault()
 
         try {
-            const response = await api.post('/login', {
+            const response = await api.post('/users/login', {
                 email,
                 password
             })
