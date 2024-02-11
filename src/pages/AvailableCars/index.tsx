@@ -1,6 +1,6 @@
 import TabMenu from "../../components/TabBar"
 import { Header, Title } from "../Register/styles"
-import { ContainerCars, GeneralContainer, ImgCar, NormalLabel, OriginalInput, WrapCars, WrapInput, WrapInputRow } from "./styles"
+import { ContainerCars, GeneralContainer, ImgCar, NormalLabel, WrapCars } from "./styles"
 
 interface ImageCar {
     image: string,
@@ -19,13 +19,7 @@ const ComponentCar: React.FC<Props> = ({CarsImages}) => {
         <Header>
             <Title>Carros disponíveis</Title>
         </Header>
-        <WrapInput>
-            <OriginalInput placeholder="Local de retirada"/>
-        </WrapInput>
-        <WrapInputRow>
-            <OriginalInput placeholder="Data" />
-            <OriginalInput placeholder="Hora" />
-        </WrapInputRow>
+        
         {CarsImages.map((cars) => (
             <GeneralContainer key={cars.label}>
             <WrapCars >
