@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom"
 import { CarDescription, CarName, Container, DescriptionWrap, DetailsContainer, ImageContainer, RentButton } from "./styles"
 
 const CarDetails = () => {
+    const navigate = useNavigate()
     return (
         <Container>
             <ImageContainer/>
