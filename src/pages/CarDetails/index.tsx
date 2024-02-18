@@ -19,7 +19,7 @@ const CarDetails = () => {
                 </DescriptionWrap>
                 
             </DetailsContainer>
-            <RentButton>Rent Now!!</RentButton>
+            <RentButton >Rent Now!!</RentButton>
         </Container>
     )
 }
