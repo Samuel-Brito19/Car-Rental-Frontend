@@ -52,8 +52,7 @@ justify-content: center;
 export const WrapInputRow = styled.div`
 display: flex;
 flex-direction: row;
-align-items: center;
-justify-content: center;
+
 `
 export const OriginalInput = styled.input`
 height: 30px;

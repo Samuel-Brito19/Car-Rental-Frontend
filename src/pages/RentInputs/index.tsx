@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -8,18 +7,20 @@ import { TimePicker } from '@mui/x-date-pickers';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import { CarsArray } from '../AvailableCars/array';
-import { Title } from '../Register/styles';
+import { Header, Title } from '../Register/styles';
+import  Button  from '@mui/material/Button';
+
 
 export default function BasicDatePicker() {
   return (
-    
+    <>
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <Title>Escolha uma data e local de retirada:</Title>
        <Autocomplete
       disablePortal
       id="combo-box-demo"
       options={CarsArray}
-      sx={{ width: 300 }}
+      sx={{ width: 375 }}
       renderInput={(params) => <TextField {...params} label="Local de retirada" />}
     />
       <DemoContainer components={['DatePicker']}>
@@ -35,7 +36,7 @@ export default function BasicDatePicker() {
       disablePortal
       id="combo-box-demo"
       options={CarsArray}
-      sx={{ width: 300 }}
+      sx={{ width: 375 }}
       renderInput={(params) => <TextField {...params} label="Local de retirada" />}
     />
       <DemoContainer components={['DatePicker']}>
@@ -45,6 +46,13 @@ export default function BasicDatePicker() {
         </WrapInputRow>
         
       </DemoContainer>
+
     </LocalizationProvider>
+    <Header style={{marginTop: 50}}>
+    <Button variant='contained'>Finish your rent</Button>
+    </Header>
+
+    </>
+    
   );
 }
