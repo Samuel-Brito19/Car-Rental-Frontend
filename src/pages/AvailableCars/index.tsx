@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom"
 import TabMenu from "../../components/TabBar"
 import { Header, Title } from "../Register/styles"
 import { ContainerCars, GeneralContainer, ImgCar, NormalLabel, WrapCars } from "./styles"
+import { getUser } from "../../services/storage"
 
 interface ImageCar {
     image: string,
@@ -14,6 +16,8 @@ interface Props {
 }
 
 const ComponentCar: React.FC<Props> = ({CarsImages}) => {
+    
+     
     return (
         <>
         <Header>

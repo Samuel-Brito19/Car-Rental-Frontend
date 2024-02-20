@@ -4,7 +4,8 @@ import { CarsArray } from './pages/AvailableCars/array'
 import Login from './pages/Login'
 import './styles/global.css'
 import Register from './pages/Register'
-import { RentInputs } from './pages/RentInputs'
+import BasicDatePicker from './pages/RentInputs'
+import { MyRents } from './pages/MyRents'
 
 function App() {
   const router = createBrowserRouter([
@@ -22,7 +23,11 @@ function App() {
     },
     {
       path: '/rent',
-      element: <RentInputs/>
+      element: <BasicDatePicker/>
+    },
+    {
+      path: '/myrents',
+      element: <MyRents/>
     },
     
   ])

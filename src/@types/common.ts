@@ -6,5 +6,13 @@ export interface User {
 
 export interface CarProps {
   id: number
+  name: string
+  model: string
+  doors: number
+  color: string
+  type: string
+  carChange: string
+  link: string
+  price: string
 	
 }
