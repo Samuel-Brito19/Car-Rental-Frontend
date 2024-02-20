@@ -3,9 +3,10 @@ import TabMenu from "../../components/TabBar"
 import { Header, Title } from "../Register/styles"
 import { ContainerCars, GeneralContainer, ImgCar, NormalLabel, WrapCars } from "./styles"
 import { getUser } from "../../services/storage"
-import { useState } from "react"
-import { CarProps } from "../../@types/common"
+import { useEffect, useState } from "react"
+import { CarDetailsProps } from "../../@types/common"
 import { AxiosError } from "axios"
+import api from "../../services/api"
 
 interface ImageCar {
     image: string,
@@ -18,21 +19,28 @@ interface Props {
     CarsImages: ImageCar[]
 }
 
-const ComponentCar: React.FC<Props> = ({CarsImages}) => {
+const ComponentCar: React.FC<Props> = () => {
     const navigate = useNavigate()
-    const user = getUser()
-    const [cars, setCars] = useState<CarProps[]>([])
+    //const user = getUser()
+    const [cars, setCars] = useState<CarDetailsProps[]>([])
+    const [car, setCar] = useState<CarDetailsProps>()
     const today = new Date()
     const ISODate = today.toISOString()
     
     const getCars =async () => {
-        if (user === null) {
-            alert('You must be logged in to access this page.')
-            navigate('/')
-            return
-        }
+        // if (user === null) {
+        //     alert('You must be logged in to access this page.')
+        //     navigate('/')
+        //     return
+        // }
         try {
-            const response = 
+            const response = await api.get('/available', {
+                params: {
+                    locatedAt: ISODate,
+                    devolutionTime: ISODate
+                }
+            })
+            setCars(response.data)
             
         } catch (error) {
             if (error instanceof AxiosError) {
@@ -40,8 +48,12 @@ const ComponentCar: React.FC<Props> = ({CarsImages}) => {
                 return
               }
         
-              alert('Something went wrong, please try again.')
+            alert('Something went wrong, please try again.')
         }
+
+        useEffect(() => {
+            getCars()
+        },[cars])
        
      }
     return (
@@ -50,14 +62,14 @@ const ComponentCar: React.FC<Props> = ({CarsImages}) => {
             <Title>Carros disponíveis</Title>
         </Header>
         
-        {CarsImages.map((cars) => (
-            <GeneralContainer key={cars.label}>
+        {cars.map((car) => (
+            <GeneralContainer key={car.id}>
             <WrapCars >
                 <ContainerCars>
-                    <NormalLabel>{cars.label}</NormalLabel>
-                    <NormalLabel style={{color: "green"}}>{cars.price}</NormalLabel>
+                    <NormalLabel>{car.name}</NormalLabel>
+                    <NormalLabel style={{color: "green"}}>{car.price}</NormalLabel>
                 </ContainerCars>
-                    <ImgCar src={cars.image}/>
+                    <ImgCar src={car.link}/>
             </WrapCars>
             </GeneralContainer>
 

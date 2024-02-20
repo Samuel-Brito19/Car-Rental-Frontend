@@ -6,6 +6,7 @@ import './styles/global.css'
 import Register from './pages/Register'
 import BasicDatePicker from './pages/RentInputs'
 import { MyRents } from './pages/MyRents'
+import CarDetails from './pages/CarDetails'
 
 function App() {
   const router = createBrowserRouter([
@@ -28,6 +29,10 @@ function App() {
     {
       path: '/myrents',
       element: <MyRents/>
+    },
+    {
+      path: '/cardetails',
+      element: <CarDetails/>
     },
     
   ])
