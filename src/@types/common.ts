@@ -4,7 +4,7 @@ export interface User {
     email: string
   }
 
-export interface CarProps {
+export interface CarDetailsProps {
   id: number
   name: string
   model: string
@@ -15,4 +15,12 @@ export interface CarProps {
   link: string
   price: string
 	
+}
+
+export interface CarProps {
+  id: number
+  name: string
+  model: string
+  link: string
+  price: string
 }
