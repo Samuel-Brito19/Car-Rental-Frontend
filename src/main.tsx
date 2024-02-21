@@ -6,6 +6,6 @@ import BasicDatePicker from './pages/RentInputs/index.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BasicDatePicker />
+    <App />
   </React.StrictMode>,
 )
