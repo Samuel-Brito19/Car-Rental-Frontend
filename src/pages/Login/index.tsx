@@ -22,9 +22,9 @@ const Login = () => {
                 email,
                 password
             })
-
-            const {token, user} = response.data
-            storage.saveForLogin(token, user)
+            console.log(response.data, 'davigomes')
+            const {accessToken} = response.data
+            storage.saveToken(accessToken)
 
             navigate('/home')
             

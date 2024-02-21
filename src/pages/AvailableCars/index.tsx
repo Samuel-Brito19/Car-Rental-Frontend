@@ -33,6 +33,7 @@ const ComponentCar: React.FC<Props> = () => {
         //     navigate('/')
         //     return
         // }
+        
         try {
             const response = await api.get('/available', {
                 params: {
@@ -41,6 +42,7 @@ const ComponentCar: React.FC<Props> = () => {
                 }
             })
             setCars(response.data)
+            console.log(response.data)
             
         } catch (error) {
             if (error instanceof AxiosError) {
@@ -51,11 +53,11 @@ const ComponentCar: React.FC<Props> = () => {
             alert('Something went wrong, please try again.')
         }
 
-        useEffect(() => {
-            getCars()
-        },[cars])
-       
+        
      }
+     useEffect(() => {
+        getCars()
+    },[])
     return (
         <>
         <Header>

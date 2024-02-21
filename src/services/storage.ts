@@ -4,8 +4,13 @@ const TOKEN_KEY = '@app/token'
 const USER_KEY = '@app/user'
 
 export const saveForLogin = (token: string, user: User) => {
+    
     localStorage.setItem(TOKEN_KEY, token)
     localStorage.setItem(USER_KEY, JSON.stringify(user))
+}
+
+export const saveToken = (token: string) => {
+    localStorage.setItem(TOKEN_KEY, token)
 }
 
 export const getToken = () => {
