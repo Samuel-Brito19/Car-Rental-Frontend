@@ -15,14 +15,11 @@ interface ImageCar {
 }
 
 
-interface Props {
-    CarsImages: ImageCar[]
-}
 
-const ComponentCar: React.FC<Props> = () => {
+
+const ComponentCar = () => {
     const navigate = useNavigate()
     const [cars, setCars] = useState<CarDetailsProps[]>([])
-    const [car, setCar] = useState<CarDetailsProps>()
     const today = new Date()
     const ISODate = today.toISOString()
     
