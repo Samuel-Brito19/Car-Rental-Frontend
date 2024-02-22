@@ -9,13 +9,23 @@ import TextField from '@mui/material/TextField';
 import { CarsArray } from '../AvailableCars/array';
 import { Header, Title } from '../Register/styles';
 import  Button  from '@mui/material/Button';
+import { useState } from 'react';
+import { Container } from './styles';
 
 
 export default function BasicDatePicker() {
+  const [locatedDate, setLocatedDate] = useState(Date)
+
+  
+  
   return (
-    <>
+  
+    <Container>
     <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <Header>
       <Title>Escolha uma data e local de retirada:</Title>
+      </Header>
+      
        <Autocomplete
       disablePortal
       id="combo-box-demo"
@@ -25,7 +35,8 @@ export default function BasicDatePicker() {
     />
       <DemoContainer components={['DatePicker']}>
         <WrapInputRow>
-        <DatePicker label="Basic date picker" />
+        <DatePicker label="Basic date picker"/>
+        
         <TimePicker label="Basic time picker" />
         </WrapInputRow>
         
@@ -52,7 +63,7 @@ export default function BasicDatePicker() {
     <Button variant='contained'>Finish your rent</Button>
     </Header>
 
-    </>
+    </Container>
     
   );
 }

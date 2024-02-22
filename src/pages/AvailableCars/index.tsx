@@ -21,18 +21,12 @@ interface Props {
 
 const ComponentCar: React.FC<Props> = () => {
     const navigate = useNavigate()
-    //const user = getUser()
     const [cars, setCars] = useState<CarDetailsProps[]>([])
     const [car, setCar] = useState<CarDetailsProps>()
     const today = new Date()
     const ISODate = today.toISOString()
     
     const getCars =async () => {
-        // if (user === null) {
-        //     alert('You must be logged in to access this page.')
-        //     navigate('/')
-        //     return
-        // }
         
         try {
             const response = await api.get('/available', {

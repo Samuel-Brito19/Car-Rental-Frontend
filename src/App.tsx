@@ -23,7 +23,7 @@ function App() {
       element: <ComponentCar CarsImages={CarsArray}/>
     },
     {
-      path: '/rent',
+      path: '/input',
       element: <BasicDatePicker/>
     },
     {

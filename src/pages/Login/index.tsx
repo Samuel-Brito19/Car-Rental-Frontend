@@ -26,7 +26,7 @@ const Login = () => {
             const {accessToken, user} = response.data
             storage.saveForLogin(accessToken, user)
 
-            navigate('/home')
+            navigate('/input')
             
         } catch (error) {
             if (error instanceof AxiosError) {
