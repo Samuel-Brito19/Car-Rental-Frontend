@@ -9,28 +9,25 @@ import { Header, Title } from '../Register/styles';
 import  Button  from '@mui/material/Button';
 import { useState } from 'react';
 import { Container } from './styles';
-import { useNavigate, useParams } from 'react-router-dom';
-import { CarDetailsProps } from '../../@types/common';
+import { useNavigate } from 'react-router-dom';
 import dayjs, { Dayjs } from 'dayjs';
 
 
 export default function BasicDatePicker() {
-  const params = useParams()
   const [pickTime, setPickTime] = useState<Dayjs | null>(dayjs(Date.now()))
   const [devolutionTime, setDevolutionTime] = useState<Dayjs | null>(dayjs(Date.now()))
   const navigate = useNavigate()
+  
+  const handleClick = () => {
+     navigate(`/home/locatedAt=${pickTime}&devolutionTime=${devolutionTime}`) 
+  }
 
-
- 
   
   return (
-
     <Container>
-    
       <Header>
       <Title>Escolha uma data e local de retirada:</Title>
       </Header>
-      
        <Autocomplete
       disablePortal
       id="combo-box-demo"
@@ -44,7 +41,6 @@ export default function BasicDatePicker() {
         <DateTimePicker label="Basic date time picker" defaultValue={dayjs('2023-04-17T15:30')} value={pickTime} onChange={(date) => setPickTime(date)}/>
       </DemoContainer>
       </LocalizationProvider>
-
 
       <Title>Escolha uma data e local de devolução:</Title>
        <Autocomplete
@@ -61,7 +57,7 @@ export default function BasicDatePicker() {
       </LocalizationProvider>
 
     <Header style={{marginTop: 50}}>
-    <Button variant='contained'>Escolha um carro</Button>
+    <Button variant='contained' onClick={handleClick}>Escolha um carro</Button>
     </Header>
 
     </Container>

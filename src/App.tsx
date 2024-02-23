@@ -18,7 +18,7 @@ function App() {
       element: <Register/>
     },
     {
-      path: '/home/:params',
+      path: '/home/locatedAt=:date1&devolutionTime=:date2',
       element: <ComponentCar />
     },
     {
