@@ -17,9 +17,12 @@ export default function BasicDatePicker() {
   const [pickTime, setPickTime] = useState<Dayjs | null>(dayjs(Date.now()))
   const [devolutionTime, setDevolutionTime] = useState<Dayjs | null>(dayjs(Date.now()))
   const navigate = useNavigate()
+
   
   const handleClick = () => {
-     navigate(`/home/locatedAt=${pickTime}&devolutionTime=${devolutionTime}`) 
+    const formatedPickTime = pickTime?.toISOString()
+    const formatedDevolutionTime = devolutionTime?.toISOString()
+     navigate(`/home?locatedAt=${formatedPickTime}&devolutionTime=${formatedDevolutionTime}`)
   }
 
   

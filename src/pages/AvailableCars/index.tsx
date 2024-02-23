@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams, useSearchParams } from "react-router-dom"
 import TabMenu from "../../components/TabBar"
 import { Header, Title } from "../Register/styles"
 import { ContainerCars, GeneralContainer, ImgCar, NormalLabel, WrapCars } from "./styles"
@@ -10,19 +10,20 @@ import api from "../../services/api"
 
 
 const ComponentCar = () => {
-    const navigate = useNavigate()
     const [cars, setCars] = useState<CarDetailsProps[]>([])
-    const today = new Date()
-    const ISODate = today.toISOString()
-    
+    const [searchParams] = useSearchParams();
+
+    // const today = new Date()
+    // const ISODate = today.toISOString()
+
     
     const getCars =async () => {
         
         try {
             const response = await api.get('/available', {
                 params: {
-                    locatedAt: ISODate,
-                    devolutionTime: ISODate
+                    locatedAt: `${searchParams.get('locatedAt')}`,
+                    devolutionTime: `${searchParams.get('devolutionTime')}`
                 }
             })
             setCars(response.data)
