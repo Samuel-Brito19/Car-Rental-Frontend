@@ -8,20 +8,13 @@ import { CarDetailsProps } from "../../@types/common"
 import { AxiosError } from "axios"
 import api from "../../services/api"
 
-interface ImageCar {
-    image: string,
-    label: string,
-    price: string
-}
-
-
-
 
 const ComponentCar = () => {
     const navigate = useNavigate()
     const [cars, setCars] = useState<CarDetailsProps[]>([])
     const today = new Date()
     const ISODate = today.toISOString()
+    
     
     const getCars =async () => {
         

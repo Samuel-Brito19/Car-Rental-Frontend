@@ -1,6 +1,5 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import ComponentCar from './pages/AvailableCars'
-import { CarsArray } from './pages/AvailableCars/array'
 import Login from './pages/Login'
 import './styles/global.css'
 import Register from './pages/Register'
@@ -19,7 +18,7 @@ function App() {
       element: <Register/>
     },
     {
-      path: '/home',
+      path: '/home/:params',
       element: <ComponentCar />
     },
     {

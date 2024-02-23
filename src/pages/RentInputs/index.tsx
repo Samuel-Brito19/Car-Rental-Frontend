@@ -9,45 +9,24 @@ import { Header, Title } from '../Register/styles';
 import  Button  from '@mui/material/Button';
 import { useState } from 'react';
 import { Container } from './styles';
-import api from '../../services/api';
 import { useNavigate, useParams } from 'react-router-dom';
-import { AxiosError } from 'axios';
+import { CarDetailsProps } from '../../@types/common';
+import dayjs, { Dayjs } from 'dayjs';
 
 
 export default function BasicDatePicker() {
   const params = useParams()
-  const [pickTime, setPickTime] = useState(null)
-  const [devolutionTime, setDevolutionTime] = useState(null)
-  const [response, setResponse] = useState(null)
+  const [pickTime, setPickTime] = useState<Dayjs | null>(dayjs(Date.now()))
+  const [devolutionTime, setDevolutionTime] = useState<Dayjs | null>(dayjs(Date.now()))
   const navigate = useNavigate()
 
 
-  const handleDateTimeChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    
-     
-    try {
-      const response = await api.get('/available', {
-        params: {
-            locatedAt: pickTime,
-            devolutionTime: devolutionTime
-        }
-    })
-      setResponse(response.data)
-      console.log(response.data)
-      navigate('/home')
-
-    } catch (error) {
-      if (error instanceof AxiosError) {
-        alert(error.response?.data.error)
-      }
-    }
-  }
-  
+ 
   
   return (
-  
+
     <Container>
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
+    
       <Header>
       <Title>Escolha uma data e local de retirada:</Title>
       </Header>
@@ -60,10 +39,12 @@ export default function BasicDatePicker() {
       renderInput={(params) => <TextField {...params} label="Local de retirada" />}
 
     />
+      <LocalizationProvider dateAdapter={AdapterDayjs} localeText={{previousMonth: 'mês anterior', nextMonth:'próximo mês'}}>
       <DemoContainer components={['DatePicker']}>
-        <DateTimePicker label="Basic date time picker"/>
-        
+        <DateTimePicker label="Basic date time picker" defaultValue={dayjs('2023-04-17T15:30')} value={pickTime} onChange={(date) => setPickTime(date)}/>
       </DemoContainer>
+      </LocalizationProvider>
+
 
       <Title>Escolha uma data e local de devolução:</Title>
        <Autocomplete
@@ -73,18 +54,18 @@ export default function BasicDatePicker() {
       sx={{ width: '100%' }}
       renderInput={(params) => <TextField {...params} label="Local de retirada" />}
     />
+    <LocalizationProvider dateAdapter={AdapterDayjs} localeText={{previousMonth: 'mês anterior', nextMonth:'próximo mês'}}>
       <DemoContainer components={['DatePicker']}>
-        
-        <DateTimePicker label="Basic date time picker"/>
-        
+        <DateTimePicker label="Basic date time picker" defaultValue={dayjs('2022-04-17T15:30')} value={devolutionTime} onChange={(date) => setDevolutionTime(date)}/>
       </DemoContainer>
+      </LocalizationProvider>
 
-    </LocalizationProvider>
     <Header style={{marginTop: 50}}>
     <Button variant='contained'>Escolha um carro</Button>
     </Header>
 
     </Container>
+
     
   );
 }
