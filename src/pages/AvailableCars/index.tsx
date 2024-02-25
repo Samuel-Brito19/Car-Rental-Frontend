@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 import { CarDetailsProps } from "../../@types/common"
 import { AxiosError } from "axios"
 import api from "../../services/api"
+import { Link } from "react-router-dom"
 
 
 const ComponentCar = () => {
@@ -45,7 +46,8 @@ const ComponentCar = () => {
         </Header>
         
         {cars.map((car) => (
-            <GeneralContainer key={car.id}>
+            <Link to={`/cardetails/${car.id}`} key={car.id}>
+            <GeneralContainer>
             <WrapCars>
                 <ContainerCars>
                     <NormalLabel>{car.name}</NormalLabel>
@@ -54,6 +56,7 @@ const ComponentCar = () => {
                     <ImgCar src={car.link}/>
             </WrapCars>
             </GeneralContainer>
+            </Link>
 
         ))}
         <TabMenu/>

@@ -21,6 +21,15 @@ border: 2px solid none;
 border-radius: 20px;
 `
 
+export const LinkCarImage = styled.img`
+display: block;
+align-items: center;
+justify-content: center;
+width: 300px;
+height: 200px;
+margin: 10px auto;
+`
+
 export const DetailsContainer = styled.div`
 width: 350px;
 height: 350px;
