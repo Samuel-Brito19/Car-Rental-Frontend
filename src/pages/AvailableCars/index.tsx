@@ -1,8 +1,7 @@
-import { useNavigate, useParams, useSearchParams } from "react-router-dom"
+import { useSearchParams } from "react-router-dom"
 import TabMenu from "../../components/TabBar"
 import { Header, Title } from "../Register/styles"
 import { ContainerCars, GeneralContainer, ImgCar, NormalLabel, WrapCars } from "./styles"
-import { getUser } from "../../services/storage"
 import { useEffect, useState } from "react"
 import { CarDetailsProps } from "../../@types/common"
 import { AxiosError } from "axios"
@@ -12,10 +11,6 @@ import api from "../../services/api"
 const ComponentCar = () => {
     const [cars, setCars] = useState<CarDetailsProps[]>([])
     const [searchParams] = useSearchParams();
-
-    // const today = new Date()
-    // const ISODate = today.toISOString()
-
     
     const getCars =async () => {
         

@@ -1,4 +1,3 @@
-import { useNavigate, Link } from "react-router-dom";
 import {Icon, Home2, Car, Profile} from 'iconsax-react'
 import { Box, Container } from "./styles";
 
