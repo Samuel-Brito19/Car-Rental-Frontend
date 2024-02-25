@@ -1,4 +1,4 @@
-import { useSearchParams } from "react-router-dom"
+import {  useSearchParams } from "react-router-dom"
 import TabMenu from "../../components/TabBar"
 import { Header, Title } from "../Register/styles"
 import { ContainerCars, GeneralContainer, ImgCar, NormalLabel, WrapCars } from "./styles"
@@ -46,7 +46,7 @@ const ComponentCar = () => {
         
         {cars.map((car) => (
             <GeneralContainer key={car.id}>
-            <WrapCars >
+            <WrapCars>
                 <ContainerCars>
                     <NormalLabel>{car.name}</NormalLabel>
                     <NormalLabel style={{color: "green"}}>{car.price}</NormalLabel>
