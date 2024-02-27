@@ -24,7 +24,9 @@ const Login = () => {
             })
             console.log(response.data, 'davigomes')
             const {accessToken, user} = response.data
+            console.log(user)
             storage.saveForLogin(accessToken, user)
+
 
             navigate('/input')
             

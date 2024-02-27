@@ -1,4 +1,4 @@
-import { ContainerCars, GeneralContainer, ImgCar, NormalLabel, WrapCars } from "../AvailableCars/styles"
+import { ContainerCars, GeneralContainer, ImgCar, NormalLabel } from "../AvailableCars/styles"
 import { Header, Title } from "../Register/styles"
 
 export const MyRents = () => {

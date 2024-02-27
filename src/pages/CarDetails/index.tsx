@@ -4,10 +4,13 @@ import { useEffect, useState } from "react"
 import { CarDetailsProps } from "../../@types/common"
 import api from "../../services/api"
 import { AxiosError } from "axios"
+import { getUser } from "../../services/storage"
 
 const CarDetails = () => {
     const [car, setCar] = useState<CarDetailsProps | null>(null)
     const {id} = useParams()
+    const user = getUser()
+    console.log(user)
 
     const getCar = async() => {
         try {
@@ -34,12 +37,12 @@ const CarDetails = () => {
                 <DetailsContainer>
                     <CarName>{car.name}</CarName>
                     <DescriptionWrap>
-                        <CarDescription>{car.color}</CarDescription>
-                        <CarDescription>{car.carChange}</CarDescription>
-                        <CarDescription>{car.doors}</CarDescription>
-                        <CarDescription>{car.type}</CarDescription>
-                        <CarDescription>{car.model}</CarDescription>
-                        <CarDescription>{car.price}</CarDescription>
+                        <CarDescription>Cor: {car.color}</CarDescription>
+                        <CarDescription>Marcha: {car.carChange}</CarDescription>
+                        <CarDescription>Portas: {car.doors}</CarDescription>
+                        <CarDescription>Tipo: {car.type}</CarDescription>
+                        <CarDescription>Modelo: {car.model}</CarDescription>
+                        <CarDescription>Preço: {car.price}</CarDescription>
                     </DescriptionWrap>
                 </DetailsContainer>
                 <RentButton >Rent Now!!</RentButton>
