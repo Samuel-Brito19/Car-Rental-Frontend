@@ -39,7 +39,7 @@ const CarDetails = () => {
             })
 
             if(Req.status === 200) {
-                navigate('/myrents')
+                navigate(`/myrents/${user?.id}?locatedAt=${searchParams.get('locatedAt')}&devolutionTime=${searchParams.get('devolutionTime')}`)
             }
         } catch (error) {
             

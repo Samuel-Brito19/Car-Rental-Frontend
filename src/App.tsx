@@ -26,7 +26,7 @@ function App() {
       element: <BasicDatePicker/>
     },
     {
-      path: '/myrents',
+      path: '/myrents/:id',
       element: <MyRents/>
     },
     {
