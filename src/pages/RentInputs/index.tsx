@@ -11,18 +11,21 @@ import { useState } from 'react';
 import { Container } from './styles';
 import { useNavigate } from 'react-router-dom';
 import dayjs, { Dayjs } from 'dayjs';
+import { getUser } from '../../services/storage';
 
 
 export default function BasicDatePicker() {
   const [pickTime, setPickTime] = useState<Dayjs | null>(dayjs(Date.now()))
   const [devolutionTime, setDevolutionTime] = useState<Dayjs | null>(dayjs(Date.now()))
+  const user = getUser()
   const navigate = useNavigate()
+  console.log(user)
 
   
   const handleClick = () => {
     const formatedPickTime = pickTime?.toISOString()
     const formatedDevolutionTime = devolutionTime?.toISOString()
-     navigate(`/home?locatedAt=${formatedPickTime}&devolutionTime=${formatedDevolutionTime}`)
+    navigate(`/home?locatedAt=${formatedPickTime}&devolutionTime=${formatedDevolutionTime}`)
   }
 
   

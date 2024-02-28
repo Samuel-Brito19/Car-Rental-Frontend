@@ -30,7 +30,7 @@ function App() {
       element: <MyRents/>
     },
     {
-      path: '/cardetails/:id',
+      path: '/cardetails/:id/:carId',
       element: <CarDetails/>
     },
     

@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams, useSearchParams } from "react-router-dom"
 import { CarDescription, CarName, Container, DescriptionWrap, DetailsContainer, ImageContainer, LinkCarImage, RentButton } from "./styles"
 import { useEffect, useState } from "react"
 import { CarDetailsProps } from "../../@types/common"
@@ -8,9 +8,11 @@ import { getUser } from "../../services/storage"
 
 const CarDetails = () => {
     const [car, setCar] = useState<CarDetailsProps | null>(null)
-    const {id} = useParams()
+    const {id, carId} = useParams()
+    const [searchParams] = useSearchParams();
     const user = getUser()
-    console.log(user)
+    const navigate = useNavigate()
+
 
     const getCar = async() => {
         try {
@@ -26,6 +28,23 @@ const CarDetails = () => {
     useEffect(() => {
         getCar()
     },[])
+
+    const rentNow = async() => {
+        try {
+                const Req = await api.post('users/rent', {
+                locatedAt: searchParams.get('locatedAt'),
+                devolutionTime: searchParams.get('devolutionTime'),
+                userId: user?.id,
+                carId: carId
+            })
+
+            if(Req.status === 200) {
+                navigate('/myrents')
+            }
+        } catch (error) {
+            
+        }
+    }
 
     return (
         <>
@@ -45,7 +64,7 @@ const CarDetails = () => {
                         <CarDescription>Preço: {car.price}</CarDescription>
                     </DescriptionWrap>
                 </DetailsContainer>
-                <RentButton >Rent Now!!</RentButton>
+                <RentButton onClick={rentNow}>Rent Now!!</RentButton>
             </Container>
         )}
        

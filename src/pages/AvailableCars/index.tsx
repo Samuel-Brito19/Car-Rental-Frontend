@@ -7,11 +7,13 @@ import { CarDetailsProps } from "../../@types/common"
 import { AxiosError } from "axios"
 import api from "../../services/api"
 import { Link } from "react-router-dom"
+import { getUser } from "../../services/storage"
 
 
 const ComponentCar = () => {
     const [cars, setCars] = useState<CarDetailsProps[]>([])
     const [searchParams] = useSearchParams();
+    const user = getUser()
     
     const getCars =async () => {
         
@@ -28,7 +30,7 @@ const ComponentCar = () => {
         } catch (error) {
             if (error instanceof AxiosError) {
                 alert(error.response?.data.error)
-                return
+                return 
               }
         
             alert('Something went wrong, please try again.')
@@ -46,7 +48,8 @@ const ComponentCar = () => {
         </Header>
         
         {cars.map((car) => (
-            <Link to={`/cardetails/${car.id}`} key={car.id}>
+            <Link to={`/cardetails/${car.id}/${user?.id}?locatedAt=${searchParams.get('locatedAt')}&devolutionTime=${searchParams.get('devolutionTime')}`} 
+            key={car.id}>
             <GeneralContainer>
             <WrapCars>
                 <ContainerCars>

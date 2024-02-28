@@ -24,3 +24,4 @@ export interface CarProps {
   link: string
   price: string
 }
+
