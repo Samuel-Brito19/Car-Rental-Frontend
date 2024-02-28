@@ -1,33 +1,51 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { ContainerCars, GeneralContainer, ImgCar, NormalLabel, WrapCars } from "../AvailableCars/styles"
 import { Header, Title } from "../Register/styles"
 import { CarDetailsProps } from "../../@types/common"
-import { useParams, useSearchParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
+import api from "../../services/api"
+import { AxiosError } from "axios"
 
 export const MyRents = () => {
     const [cars, setCars] = useState<CarDetailsProps[]>([])
     const {id} = useParams()
-    const [searchParams] = useSearchParams();
 
+    const getRents = async() => {
+        try {
+            const req = await api.get(`users/${id}/rent`)
+
+            console.log(req.data)
+            setCars(req.data)
+        } catch (error) {
+            if (error instanceof AxiosError) {
+                alert(error.response?.data.error)
+                return
+            }
+        }
+    }
+
+    useEffect(() => {
+        getRents()
+    },[])
     return(
         <>
         <Header>
             <Title>Meus aluguéis</Title>
         </Header>
-        <GeneralContainer>
+        {cars.map((car) => (
+            <GeneralContainer key={car.id}>
             <WrapCars>   
                 <ContainerCars>
-                    <NormalLabel>Oi</NormalLabel>
-                    <NormalLabel style={{color: "green"}}>preço</NormalLabel>
+                    <NormalLabel>{car.name}</NormalLabel>
+                    <NormalLabel style={{color: "green"}}>{car.price}</NormalLabel>
                 </ContainerCars>
-                <ImgCar src="https://miro.medium.com/v2/resize:fit:1358/1*jxOiNxmcG3QTF6qlX0yXbw.jpeg"/>
-            </WrapCars>  
+                <ImgCar>{car.link}</ImgCar>
+            </WrapCars>
+            <Header>
+                <NormalLabel style={{justifyContent: 'center', border: '1px solid gray', width: '50%'}}></NormalLabel>
+            </Header>
         </GeneralContainer>
-        <Header>
-        <NormalLabel style={{justifyContent: 'center', border: '1px solid gray', width: '50%'}}>blx</NormalLabel>
-        </Header>
-        
-
+        ))}
         </>
     )
 }

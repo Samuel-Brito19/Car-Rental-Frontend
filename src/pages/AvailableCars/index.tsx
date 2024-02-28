@@ -25,7 +25,7 @@ const ComponentCar = () => {
                 }
             })
             setCars(response.data)
-            console.log(response.data)
+            console.log(response.data.carId)
             
         } catch (error) {
             if (error instanceof AxiosError) {
