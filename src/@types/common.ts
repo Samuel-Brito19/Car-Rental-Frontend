@@ -17,6 +17,13 @@ export interface CarDetailsProps {
 	
 }
 
+
+export interface RentInfo {
+  locatedAt: string;
+  devolutionTime: string;
+  rentedCar: CarDetailsProps;
+}
+
 export interface CarProps {
   id: number
   name: string

@@ -1,23 +1,29 @@
 import { useEffect, useState } from "react"
 import { ContainerCars, GeneralContainer, ImgCar, NormalLabel, WrapCars } from "../AvailableCars/styles"
 import { Header, Title } from "../Register/styles"
-import { CarDetailsProps } from "../../@types/common"
-import { useParams, useSearchParams } from "react-router-dom"
+import { RentInfo } from "../../@types/common"
+import { useParams } from "react-router-dom"
 import api from "../../services/api"
 import { AxiosError } from "axios"
 
 export const MyRents = () => {
-    const [rentedCar, setRentedCar] = useState<CarDetailsProps[]>([])
+    const [rentedCar, setRentedCar] = useState<RentInfo[]>([])
+    //const [rent, setRent] = useState<rentedCarProps[]>([])
     const {id} = useParams()
-    const [searchParams] = useSearchParams();
-    const locatedAt = searchParams.get('locatedAt')!.toString().substring(0, 10)
-    const devolutionTime = searchParams.get('devolutionTime')!.toString().substring(0, 10)
-
+    
     const getRents = async() => {
         try {
             const req = await api.get(`users/${id}/rent`)
-            const rentedCarsInfo = req.data.map((item: { rentedCar: any }) => item.rentedCar);
-            setRentedCar(rentedCarsInfo)
+            console.log(req.data)
+
+            const rentInfoData: RentInfo[] = req.data.map((item: any) => {
+                return {
+                    locatedAt: item.locatedAt,
+                    devolutionTime: item.devolutionTime,
+                    rentedCar: item.rentedCar
+                };
+            });
+            setRentedCar(rentInfoData)
         } catch (error) {
             if (error instanceof AxiosError) {
                 alert(error.response?.data.error)
@@ -35,21 +41,27 @@ export const MyRents = () => {
             <Title>Meus aluguéis</Title>
         </Header>
         {rentedCar.map((car) => (
-            <GeneralContainer key={car.id}>
+            <>
+            <GeneralContainer key={car.rentedCar.id}>
             <WrapCars>   
                 <ContainerCars>
-                    <NormalLabel>{car.name}</NormalLabel>
-                    <NormalLabel style={{color: "green"}}>{car.price}</NormalLabel>
+                    <NormalLabel>{car.rentedCar.name}</NormalLabel>
+                    <NormalLabel style={{color: "green"}}>{car.rentedCar.price}</NormalLabel>
                 </ContainerCars>
-                <ImgCar src={car.link}></ImgCar>
+                <ImgCar src={car.rentedCar.link}></ImgCar>
             </WrapCars>
+            <NormalLabel></NormalLabel>
             
         </GeneralContainer>
+        <Header>
+            <NormalLabel style={{backgroundColor: 'gray'}}>{car.locatedAt} até {car.devolutionTime}</NormalLabel>
+        
+        
+        </Header>
+        </>
         
         ))}
-        <Header>
-                <NormalLabel style={{backgroundColor: 'gray'}}>De {locatedAt} até {devolutionTime}</NormalLabel>
-            </Header>
+        
         </>
     )
 }
