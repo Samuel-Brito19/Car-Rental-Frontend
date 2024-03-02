@@ -67,6 +67,7 @@ const CarDetails = () => {
                 <RentButton onClick={rentNow}>Rent Now!!</RentButton>
             </Container>
         )}
+    
        
         </>
 

@@ -54,14 +54,11 @@ export const MyRents = () => {
             
         </GeneralContainer>
         <Header>
-            <NormalLabel style={{backgroundColor: 'gray'}}>{car.locatedAt} até {car.devolutionTime}</NormalLabel>
-        
-        
+            <NormalLabel style={{backgroundColor: 'gray'}}>{String(car.locatedAt).substring(0,10)} até {String(car.devolutionTime).substring(0,10)}</NormalLabel>
         </Header>
         </>
         
         ))}
-        
         </>
     )
 }

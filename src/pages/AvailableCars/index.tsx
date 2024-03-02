@@ -1,5 +1,4 @@
 import {  useSearchParams } from "react-router-dom"
-import TabMenu from "../../components/TabBar"
 import { Header, Title } from "../Register/styles"
 import { ContainerCars, GeneralContainer, ImgCar, NormalLabel, WrapCars } from "./styles"
 import { useEffect, useState } from "react"
@@ -8,6 +7,7 @@ import { AxiosError } from "axios"
 import api from "../../services/api"
 import { Link } from "react-router-dom"
 import { getUser } from "../../services/storage"
+import CcLink from "../../components/Back-Button"
 
 
 const ComponentCar = () => {
@@ -43,6 +43,9 @@ const ComponentCar = () => {
     },[])
     return (
         <>
+        <CcLink backArrow href="/input">
+            Voltar página
+          </CcLink>
         <Header>
             <Title>Carros disponíveis</Title>
         </Header>
@@ -62,7 +65,6 @@ const ComponentCar = () => {
             </Link>
 
         ))}
-        <TabMenu/>
         </>
     )
 }
