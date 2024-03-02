@@ -5,6 +5,7 @@ import { RentInfo } from "../../@types/common"
 import { useParams } from "react-router-dom"
 import api from "../../services/api"
 import { AxiosError } from "axios"
+import CcLink from "../../components/Back-Button"
 
 export const MyRents = () => {
     const [rentedCar, setRentedCar] = useState<RentInfo[]>([])
@@ -37,6 +38,9 @@ export const MyRents = () => {
     },[])
     return(
         <>
+        <CcLink backArrow href="/home">
+            Voltar página
+          </CcLink>
         <Header>
             <Title>Meus aluguéis</Title>
         </Header>

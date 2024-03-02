@@ -5,6 +5,7 @@ import { CarDetailsProps } from "../../@types/common"
 import api from "../../services/api"
 import { AxiosError } from "axios"
 import { getUser } from "../../services/storage"
+import CcLink from "../../components/Back-Button"
 
 const CarDetails = () => {
     const [car, setCar] = useState<CarDetailsProps | null>(null)
@@ -48,6 +49,9 @@ const CarDetails = () => {
 
     return (
         <>
+        <CcLink backArrow href="/home">
+            Voltar página
+          </CcLink>
          {car && (
             <Container key={car.id}>
                 <ImageContainer>
