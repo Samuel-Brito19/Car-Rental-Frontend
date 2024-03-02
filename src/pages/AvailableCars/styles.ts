@@ -39,14 +39,15 @@ flex-direction: column;
 padding: 10px;
 `
 export const WrapInput = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-& input {
-    width: 370px;
-}
+    & input {
+        width: 100%; /* Use percentage for fluidity */
+        max-width: 370px; /* Set a max-width if needed */
+    }
 `
 
 export const WrapInputRow = styled.div`

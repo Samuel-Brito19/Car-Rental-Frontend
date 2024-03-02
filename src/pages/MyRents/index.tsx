@@ -15,7 +15,6 @@ export const MyRents = () => {
     const getRents = async() => {
         try {
             const req = await api.get(`users/${id}/rent`)
-            console.log(req.data)
 
             const rentInfoData: RentInfo[] = req.data.map((item: any) => {
                 return {
@@ -38,7 +37,7 @@ export const MyRents = () => {
     },[])
     return(
         <>
-        <CcLink backArrow href="/home">
+        <CcLink backArrow href="/input">
             Voltar página
           </CcLink>
         <Header>
