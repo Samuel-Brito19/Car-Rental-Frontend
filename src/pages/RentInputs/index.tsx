@@ -8,7 +8,6 @@ import { useState } from 'react';
 import { Container } from './styles';
 import { useNavigate } from 'react-router-dom';
 import dayjs, { Dayjs } from 'dayjs';
-import { getUser } from '../../services/storage';
 
 
 export default function BasicDatePicker() {
