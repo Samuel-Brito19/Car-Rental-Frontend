@@ -14,7 +14,6 @@ import { getUser } from '../../services/storage';
 export default function BasicDatePicker() {
   const [pickTime, setPickTime] = useState<Dayjs | null>(dayjs(Date.now()))
   const [devolutionTime, setDevolutionTime] = useState<Dayjs | null>(dayjs(Date.now()))
-  const user = getUser()
   const navigate = useNavigate()
 
   
