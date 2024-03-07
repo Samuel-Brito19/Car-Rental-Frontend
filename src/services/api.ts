@@ -2,7 +2,7 @@ import axios from "axios";
 import { getToken } from "./storage";
 
 const api = axios.create({
-    baseURL: "https://car-rental-frontend-ten.vercel.app"
+    baseURL: process.env.VITE_API_URL || 'http://localhost:3000'
   })
   
   api.interceptors.request.use(async (config) => {
