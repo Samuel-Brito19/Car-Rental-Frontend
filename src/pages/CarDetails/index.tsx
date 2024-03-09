@@ -35,8 +35,8 @@ const CarDetails = () => {
                 const Req = await api.post('users/rent', {
                 locatedAt: searchParams.get('locatedAt'),
                 devolutionTime: searchParams.get('devolutionTime'),
-                userId: user?.id,
-                carId: carId
+                carId: carId,
+                userId: user?.id
             })
 
             if(Req.status === 200) {
