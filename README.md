@@ -6,4 +6,4 @@ In this project, i use Fastify in the backend and React in the frontend.
 
 ## Images
 
-<img src='![Alt text](<Screenshot from 2024-03-09 18-48-05-1.png>)'>
+<img src='<Screenshot from 2024-03-09 18-48-05-1.png>'>
