@@ -9,7 +9,7 @@ import CcLink from "../../components/Back-Button"
 
 const CarDetails = () => {
     const [car, setCar] = useState<CarDetailsProps | null>(null)
-    const {id, carId} = useParams()
+    const {id} = useParams()
     const [searchParams] = useSearchParams();
     const user = getUser()
     const navigate = useNavigate()
@@ -30,13 +30,15 @@ const CarDetails = () => {
         getCar()
     },[])
 
+
     const rentNow = async() => {
         try {
                 const Req = await api.post('users/rent', {
                 locatedAt: searchParams.get('locatedAt'),
                 devolutionTime: searchParams.get('devolutionTime'),
-                carId: carId,
+                carId: id,
                 userId: user?.id
+                
             })
 
             if(Req.status === 200) {
