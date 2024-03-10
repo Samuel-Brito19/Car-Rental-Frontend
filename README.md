@@ -6,8 +6,8 @@ In this project, i use Fastify in the backend and React in the frontend.
 
 ## Images
 
-<img src='Screenshot from 2024-03-09 18-48-05-2.png'>
-<img src='Screenshot from 2024-03-09 18-49-33.png'>
-<img src='Screenshot from 2024-03-09 18-49-45.png'>
-<img src='Screenshot from 2024-03-09 18-49-52.png'>
-<img src='Screenshot from 2024-03-09 18-50-26.png'>
+<img src='./images/Screenshot from 2024-03-09 18-48-05-2.png'>
+<img src='./images/Screenshot from 2024-03-09 18-49-33.png'>
+<img src='./images/Screenshot from 2024-03-09 18-49-45.png'>
+<img src='./images/Screenshot from 2024-03-09 18-49-52.png'>
+<img src='./images/Screenshot from 2024-03-09 18-50-26.png'>
