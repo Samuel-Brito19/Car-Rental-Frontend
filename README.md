@@ -6,4 +6,4 @@ In this project, i use Fastify in the backend and React in the frontend.
 
 ## Images
 
-<img src='<Screenshot from 2024-03-09 18-48-05-1.png>'>
+<img src='file:///home/samuel/Pictures/Screenshot%20from%202024-03-09%2018-48-05.png'>
