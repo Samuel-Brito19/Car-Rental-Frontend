@@ -1,6 +1,6 @@
 # Car Rental
 
-This is a car rental project created by me with the intention of test my abilities in both frontend and backend. It working by simple choosing a date for pick the car and a date for return it, choose a car from your preference and make a rent! You can also see all the rents that you make.
+This is a car rental project created by me with the intention of test my abilities in both frontend and backend. It working by simple choosing a date for pick the car and a date for returning it, choosing a car from your preference and making a rent! You can also see all the rents that you've made.
 
 ## Technologies used:
 
