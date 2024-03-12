@@ -4,7 +4,7 @@ This is a car rental project created by me with the intention of test my abiliti
 
 ## Technologies used:
 
-ReactJS - Frontend
+ReactJS - Frontend <br/>
 Fastify - Backend
 
 ## Installation
