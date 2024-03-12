@@ -1,8 +1,11 @@
 # Car Rental
 
-This is a car rental site created by me. My ideia with this project is test my abilities in both frontend and backend in a more complex project.
+This is a car rental project created by me with the intention of test my abilities in both frontend and backend. It working by simple choosing a date for pick the car and a date for return it, choose a car from your preference and make a rent! You can also see all the rents that you make.
 
-In this project,I use Fastify and React.
+## Technologies used:
+
+ReactJS - Frontend
+Fastify - Backend
 
 ## Images
 
