@@ -7,6 +7,17 @@ This is a car rental project created by me with the intention of test my abiliti
 ReactJS - Frontend
 Fastify - Backend
 
+## Installation
+
+You can just clone both projects (Car-Rental-Frontend and Car-Rental-Backend), and after that execute this two commands:
+
+```
+npm i
+npm run dev
+```
+
+And there you have it!
+
 ## Images
 
 <img src='./images/Screenshot from 2024-03-09 18-48-05-2.png'>
