@@ -9,7 +9,7 @@ Fastify - Backend
 
 ## Installation
 
-You can just clone both projects (Car-Rental-Frontend and Car-Rental-Backend), and after that execute this two commands:
+You can just clone the projects (Car-Rental-Frontend and Car-Rental-Backend), and after that execute this two commands in both:
 
 ```
 npm i
