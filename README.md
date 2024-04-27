@@ -4,8 +4,8 @@ This is a car rental project created by me with the intention of test my abiliti
 
 ## Technologies used:
 
-ReactJS - Frontend <br/>
-Fastify - Backend
+ReactJS, Styled-Components -> Frontend <br/>
+Fastify, Prisma, Zod -> Backend
 
 ## Installation
 
@@ -16,7 +16,7 @@ npm i
 npm run dev
 ```
 
-And there you have it!
+And there you go!
 
 ## Images
 
